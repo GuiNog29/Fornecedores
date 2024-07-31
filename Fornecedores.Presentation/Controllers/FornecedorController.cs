@@ -15,6 +15,11 @@ namespace Fornecedores.Presentation.Controllers
             _fornecedorService = fornecedorService;
         }
 
+        /// <summary>
+        /// Método para cadastrar um novo fornecedor
+        /// </summary>
+        /// <param name="fornecedorDto"></param>
+        /// <returns></returns>
         [HttpPost("CadastrarFornecedor")]
         public async Task<IActionResult> CadastrarFornecedor([FromBody] FornecedorDto fornecedorDto)
         {
@@ -36,6 +41,12 @@ namespace Fornecedores.Presentation.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para atualizar fornecedor pelo seu ID
+        /// </summary>
+        /// <param name="fornecedorDto"></param>
+        /// <param name="fornecedorId"></param>
+        /// <returns></returns>
         [HttpPut("AtualizarFornecedor/{fornecedorId}")]
         public async Task<IActionResult> AtualizarFornecedor([FromBody] FornecedorDto fornecedorDto, int fornecedorId)
         {
@@ -57,6 +68,11 @@ namespace Fornecedores.Presentation.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para deletar fornecedor pelo seu ID
+        /// </summary>
+        /// <param name="fornecedorId"></param>
+        /// <returns></returns>
         [HttpDelete("ExcluirFornecedorPorId/{fornecedorId}")]
         public async Task<IActionResult> ExcluirFornecedorPorId(int fornecedorId)
         {
@@ -77,6 +93,11 @@ namespace Fornecedores.Presentation.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para buscar fornecedor pelo seu ID
+        /// </summary>
+        /// <param name="fornecedorId"></param>
+        /// <returns></returns>
         [HttpGet("BuscarFornecedorPorId/{fornecedorId}")]
         public async Task<IActionResult> BuscarFornecedorPorId(int fornecedorId)
         {
@@ -98,6 +119,10 @@ namespace Fornecedores.Presentation.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para buscar todos fornecedores cadastrados
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("BuscarTodosFornecedores")]
         public async Task<IActionResult> BuscarTodosFornecedores()
         {
